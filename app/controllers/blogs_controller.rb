@@ -4,6 +4,8 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.order(created_at: :desc)
+    favorites = Favorite.where(user_id: current_user.id).pluck(:blog_id)
+    @favorites_list = Blog.find(favorites)
   end
 
   def show
