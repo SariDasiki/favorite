@@ -1,1 +1,1 @@
-$("#material-icons-<%= @blog.id %>").replaceWith("<%= j(render('blogs/favorite', post: @post)) %>");
+$("#favorite-<%= @blog.id %>").html("<%= j(render 'blogs/favorite', {blog: @blog}) %>")
